@@ -74,7 +74,7 @@ const About = () => {
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
           </a>
           <a
-            href="https://github.com/mayangpuspitasari"
+            href="https://github.com/mayangpuspitasariii"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-gray-300 transition-transform duration-500 hover:scale-110"
