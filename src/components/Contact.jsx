@@ -29,7 +29,7 @@ const Contact = () => {
             icon={faPhone}
             className="text-teal-500 text-xl mr-4"
           />
-          <p>(+62) 822-7766-5179</p>
+          <p>(+62) 83167300929</p>
         </div>
 
         <div className="flex items-center">
