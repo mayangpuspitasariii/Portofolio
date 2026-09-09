@@ -13,7 +13,7 @@ const projects = [
     description:
       "Website portofolio pribadi yang dibuat sebagai media untuk memperkenalkan diri, menampilkan keahlian, pengalaman, serta proyek yang telah saya kerjakan.",
     image: portfolioImg,
-    link: "https://portofolio-six-brown.vercel.app/",
+    link: "https://mayang-portofolio.vercel.app/",
     status: "Website Dalam Proses Pengembangan",
     demo: null,
     technologies: ["React.js", "Tailwind CSS"],
