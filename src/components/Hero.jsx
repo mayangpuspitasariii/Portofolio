@@ -1,16 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
-
+import React, { useState, useEffect, useRef } from "react";
 const Hero = () => {
-  const texts = ['Junior Developer', 'React Developer', 'System Analyst'];
+  const texts = ["System Analyst", "IT Project Management", "React Developer"];
   const [textIndex, setTextIndex] = useState(0);
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const timerRef = useRef(null); // Menggunakan useRef untuk menyimpan timer
-
+  const timerRef = useRef(null);
   useEffect(() => {
     const text = texts[textIndex];
     let i = isDeleting ? text.length : 0;
-
     const updateText = () => {
       if (isDeleting) {
         setDisplayText(text.substring(0, i));
@@ -18,66 +15,134 @@ const Hero = () => {
         if (i < 0) {
           setIsDeleting(false);
           setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
-          timerRef.current = setTimeout(updateText, 500); // Delay before starting the next text
+          timerRef.current = setTimeout(updateText, 500);
         } else {
-          timerRef.current = setTimeout(updateText, 50); // Speed of deletion
+          timerRef.current = setTimeout(updateText, 50);
         }
       } else {
         setDisplayText(text.substring(0, i));
         i++;
         if (i > text.length) {
           setIsDeleting(true);
-          timerRef.current = setTimeout(updateText, 1000); // Delay before starting to delete
+          timerRef.current = setTimeout(updateText, 1800);
         } else {
-          timerRef.current = setTimeout(updateText, 100); // Speed of typing
+          timerRef.current = setTimeout(updateText, 90);
         }
       }
     };
-
-    // Start the typing/deleting process
     updateText();
-
-    // Cleanup function to clear the timer
     return () => clearTimeout(timerRef.current);
   }, [textIndex, isDeleting]);
-
   return (
-    <div
-      className="bg-gray-900 bg-cover bg-center h-screen flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-40 text-center md:text-left"
+    <section
       id="home"
+      className="relative min-h-screen overflow-hidden bg-slate-950 px-6 text-white sm:px-10 lg:px-20"
     >
-      <div className="text-white">
-        {/* Heading utama */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-          Hai! 👋😊
-        </h1>
+      {" "}
+      {/* Background Glow */}{" "}
+      <div className="absolute -left-32 top-20 h-80 w-80 rounded-full bg-sky-500/10 blur-3xl" />{" "}
+      <div className="absolute -right-32 bottom-10 h-96 w-96 rounded-full bg-indigo-500/10 blur-3xl" />{" "}
+      {/* Content */}{" "}
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl items-center">
+        {" "}
+        <div className="w-full">
+          {" "}
+          {/* Small Introduction */}{" "}
+          <div className="mb-5 flex items-center gap-3">
+            {" "}
+            <span className="h-px w-10 bg-sky-400" />{" "}
+            <span className="text-sm font-medium uppercase tracking-[0.25em] text-sky-400">
+              {" "}
+              Welcome to my portfolio{" "}
+            </span>{" "}
+          </div>{" "}
+          {/* Main Heading */}{" "}
+          <h1 className="max-w-4xl text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
+            {" "}
+            Hello, Im{" "}
+            <span className="bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent">
+              {" "}
+              Mayang{" "}
+            </span>{" "}
+            <span className="text-white">.</span>{" "}
+          </h1>{" "}
+          {/* Role */}{" "}
+          <div className="mt-5 flex flex-wrap items-center gap-2 text-xl font-semibold sm:text-2xl md:text-3xl">
+            {" "}
+            <span className="text-slate-300"> Im a </span>{" "}
+            <span className="text-sky-400">
+              {" "}
+              {displayText}{" "}
+              <span className="ml-1 animate-pulse text-sky-300"> | </span>{" "}
+            </span>{" "}
+          </div>{" "}
+          {/* Description */}{" "}
+          <p className="mt-6 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
+            {" "}
+            Lulusan Sistem Informasi yang memiliki minat pada{" "}
+            <span className="font-semibold text-slate-200">
+              {" "}
+              Analisis Sistem{" "}
+            </span>{" "}
+            dan{" "}
+            <span className="font-semibold text-slate-200">
+              {" "}
+              Manajemen Proyek IT{" "}
+            </span>
+            . Memiliki pengalaman dalam perancangan sistem dan pengembangan
+            aplikasi berbasis web menggunakan teknologi modern.{" "}
+          </p>{" "}
+          {/* CTA */}{" "}
+          <div className="mt-9 flex flex-wrap gap-4">
+            {" "}
+            {/* Download CV */}{" "}
+            <a
+              href="/cv/Mayang Puspita Sari - CV.pdf"
+              download="CV Mayang Puspita Sari.pdf"
+              className="group inline-flex items-center gap-2 rounded-xl bg-sky-500 px-6 py-3 font-semibold text-slate-950 shadow-lg shadow-sky-500/20 transition duration-300 hover:-translate-y-1 hover:bg-sky-400"
+            >
+              {" "}
+              Download CV{" "}
+              <span className="transition-transform duration-300 group-hover:translate-y-1">
+                {" "}
+                ↓{" "}
+              </span>{" "}
+            </a>{" "}
+          </div>{" "}
+          {/* Quick Information */}{" "}
+          <div className="mt-14 flex flex-wrap gap-8 border-t border-slate-800 pt-8">
+            {/* GPA */}
+            <div>
+              <p className="text-2xl font-bold text-white">3.80</p>
+              <p className="mt-1 text-sm text-slate-500">GPA</p>
+            </div>
 
-        {/* Nama dan jabatan */}
-        <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
-          Nama Saya{' '}
-          <span className="text-lg sm:text-3xl md:text-4xl font-bold text-blue-300">
-            Mayang Puspita Sari
-          </span>
-        </p>
-        <p className="text-sm sm:text-lg md:text-xl font-bold">
-          Saya Seorang{' '}
-          <span className="font-bold text-blue-300 text-lg sm:text-2xl md:text-4xl">
-            {displayText}
-          </span>
-        </p>
+            <div className="h-10 w-px bg-slate-800" />
 
-        {/* Tombol Download CV */}
-        <a
-          href="/cv/resume-mayang.pdf" // Path file PDF ada di public/cv/
-          download="CV Mayang Puspita Sari.pdf" // Nama file saat diunduh
-          className="mt-6 bg-transparent border-2 border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 text-white font-semibold py-2 px-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 inline-block text-center"
-        >
-          Download CV
-        </a>
-      </div>
-    </div>
+            {/* Education */}
+            <div>
+              <p className="text-2xl font-bold text-white">S1</p>
+              <p className="mt-1 text-sm text-slate-500">Information Systems</p>
+              <p className="mt-1 text-xs text-sky-400">Universitas Royal</p>
+            </div>
+
+            <div className="h-10 w-px bg-slate-800" />
+
+            {/* Skill */}
+            <div>
+              <p className="text-2xl font-bold text-white">React</p>
+              <p className="mt-1 text-sm text-slate-500">Web Development</p>
+            </div>
+          </div>
+        </div>{" "}
+      </div>{" "}
+      {/* Scroll Indicator */}{" "}
+      <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-slate-600 md:flex">
+        {" "}
+        <span className="text-xs uppercase tracking-widest"> Scroll </span>{" "}
+        <div className="h-8 w-px bg-gradient-to-b from-sky-400 to-transparent" />{" "}
+      </div>{" "}
+    </section>
   );
 };
-
 export default Hero;
-

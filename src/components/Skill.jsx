@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+
 import {
   FaReact,
   FaJs,
@@ -6,7 +7,8 @@ import {
   FaNodeJs,
   FaBootstrap,
   FaLaravel,
-} from 'react-icons/fa';
+} from "react-icons/fa";
+
 import {
   SiTailwindcss,
   SiCodeigniter,
@@ -15,77 +17,111 @@ import {
   SiCanva,
   SiMysql,
   SiFigma,
-} from 'react-icons/si';
+} from "react-icons/si";
 
 const skills = [
-  { name: 'React', icon: <FaReact />, color: 'bg-blue-400' },
-  { name: 'JavaScript', icon: <FaJs />, color: 'bg-yellow-400' },
-  { name: 'PHP', icon: <FaPhp />, color: 'bg-purple-500' },
-  { name: 'Node.js', icon: <FaNodeJs />, color: 'bg-green-500' },
-  { name: 'CodeIgniter', icon: <SiCodeigniter />, color: 'bg-red-500' },
-  { name: 'Laravel', icon: <FaLaravel />, color: 'bg-red-600' },
-  { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: 'bg-teal-400' },
-  { name: 'Bootstrap', icon: <FaBootstrap />, color: 'bg-indigo-500' },
-  { name: 'Express', icon: <SiExpress />, color: 'bg-gray-500' },
-  { name: 'Canva', icon: <SiCanva />, color: 'bg-blue-500' },
-  { name: 'Postman', icon: <SiPostman />, color: 'bg-orange-500' },
-  { name: 'MySQL', icon: <SiMysql />, color: 'bg-blue-600' },
-  { name: 'Figma', icon: <SiFigma />, color: 'bg-pink-500' },
+  { name: "React.js", icon: <FaReact /> },
+  { name: "JavaScript", icon: <FaJs /> },
+  { name: "Node.js", icon: <FaNodeJs /> },
+  { name: "Express.js", icon: <SiExpress /> },
+  { name: "MySQL", icon: <SiMysql /> },
+  { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+  { name: "PHP", icon: <FaPhp /> },
+  { name: "Laravel", icon: <FaLaravel /> },
+  { name: "CodeIgniter", icon: <SiCodeigniter /> },
+  { name: "Bootstrap", icon: <FaBootstrap /> },
+  { name: "Postman", icon: <SiPostman /> },
+  { name: "Figma", icon: <SiFigma /> },
+  { name: "Canva", icon: <SiCanva /> },
 ];
 
 const Skill = () => {
   const [showAll, setShowAll] = useState(false);
 
-  const initialSkillsToShow = 6; // tampilkan 6 dulu biar balance
+  const initialSkillsToShow = 6;
+
+  const displayedSkills = showAll
+    ? skills
+    : skills.slice(0, initialSkillsToShow);
 
   return (
-    <section className="bg-gray-900 py-20" id="skill">
-      <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        {/* Judul */}
-        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
-          My <span className="text-blue-400">Skills</span>
-        </h2>
+    <section
+      id="skill"
+      className="relative overflow-hidden bg-slate-950 px-6 py-24 text-white sm:px-10 lg:px-20"
+    >
+      {/* Background Decoration */}
+      <div className="absolute -left-32 top-20 h-80 w-80 rounded-full bg-sky-500/10 blur-3xl" />
+      <div className="absolute -right-32 bottom-10 h-96 w-96 rounded-full bg-indigo-500/10 blur-3xl" />
+      <div className="relative mx-auto max-w-6xl">
+        {/* Section Heading */}
+        <div className="mb-14 text-center">
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.25em] text-sky-400">
+            What I Work With
+          </p>
 
-        {/* Grid Skill */}
-        <div
-          className={`grid ${
-            showAll
-              ? 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8'
-              : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-8 justify-center'
-          }`}
-        >
-          {(showAll ? skills : skills.slice(0, initialSkillsToShow)).map(
-            (skill) => (
-              <div
-                key={skill.name}
-                className="flex flex-col items-center p-5 bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300"
-              >
-                <div
-                  className={`text-white text-4xl w-20 h-20 rounded-full flex items-center justify-center mb-3 ${skill.color}`}
-                >
-                  {skill.icon}
-                </div>
-                <p className="text-white font-medium text-center">
-                  {skill.name}
-                </p>
-              </div>
-            ),
-          )}
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+            My <span className="text-sky-400">Skills</span>
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">
+            Teknologi dan tools yang saya gunakan dalam pengembangan aplikasi
+            web, pengelolaan database, serta perancangan dan pengembangan
+            sistem.
+          </p>
         </div>
 
-        {/* Tombol */}
-        <div className="text-center mt-12">
+        {/* Skills Grid */}
+        <div
+          className={`grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ${
+            showAll ? "" : "xl:grid-cols-6"
+          }`}
+        >
+          {displayedSkills.map((skill) => (
+            <div
+              key={skill.name}
+              className="group relative rounded-2xl border border-white/5 bg-slate-900/60 p-6 text-center backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-400/30 hover:bg-slate-900"
+            >
+              {/* Icon */}
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/5 bg-slate-800 text-3xl text-sky-400 transition-all duration-300 group-hover:border-sky-400/20 group-hover:bg-sky-400/10 group-hover:text-sky-300">
+                {skill.icon}
+              </div>
+
+              {/* Skill Name */}
+              <p className="text-sm font-medium text-slate-200 transition-colors duration-300 group-hover:text-white">
+                {skill.name}
+              </p>
+
+              {/* Bottom Glow */}
+              <div className="absolute bottom-0 left-1/2 h-px w-0 -translate-x-1/2 bg-sky-400 transition-all duration-300 group-hover:w-1/2" />
+            </div>
+          ))}
+        </div>
+
+        {/* Show More Button */}
+        <div className="mt-12 text-center">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="bg-blue-500 text-white py-2 px-8 rounded-full shadow-md hover:bg-blue-600 transition-colors duration-300"
+            className="group inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-400/10 px-6 py-3 text-sm font-medium text-sky-300 transition-all duration-300 hover:border-sky-400/50 hover:bg-sky-400/20 hover:text-sky-200"
           >
-            {showAll ? 'Lihat Lebih Sedikit' : 'Lihat Semua Skill'}
+            {showAll ? "Lihat Lebih Sedikit" : "Lihat Semua Skill"}
+
+            <span
+              className={`transition-transform duration-300 ${
+                showAll ? "rotate-180" : ""
+              }`}
+            >
+              ↓
+            </span>
           </button>
         </div>
       </div>
+      <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-slate-600 md:flex">
+        {" "}
+        <span className="text-xs uppercase tracking-widest"> Scroll </span>{" "}
+        <div className="h-8 w-px bg-gradient-to-b from-sky-400 to-transparent" />{" "}
+      </div>{" "}
     </section>
   );
 };
 
 export default Skill;
-

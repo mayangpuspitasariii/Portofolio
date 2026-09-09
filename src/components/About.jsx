@@ -1,99 +1,156 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
   faGithub,
   faInstagram,
-} from '@fortawesome/free-brands-svg-icons';
-import myFoto from '../asset/Mayang.jpg';
+} from "@fortawesome/free-brands-svg-icons";
 
-const foto = [
-  {
-    image: myFoto,
-    title: 'Foto Diri',
-  },
-];
+import myFoto from "../asset/Mayang.jpg";
 
 const About = () => {
   return (
-    <div
-      className="bg-gray-900 bg-cover bg-center grid grid-cols-1 md:grid-cols-2 items-center px-8 md:px-20 lg:px-40 py-10 md:py-20 gap-10"
+    <section
       id="about"
+      className="relative overflow-hidden bg-slate-950 px-6 py-20 text-white md:px-12 lg:px-24"
     >
-      {/* Bagian Foto */}
-      <div className="flex justify-center">
-        <div className="relative p-4 overflow-hidden transform hover:scale-105 hover:rotate-3 transition-transform duration-700">
-          <img
-            src={foto[0].image}
-            alt={foto[0].title}
-            className="w-40 h-40 sm:w-48 sm:h-48 md:w-60 md:h-60 rounded-full object-cover hover:shadow-2xl transition-shadow duration-300"
-            style={{ boxShadow: '0 4px 6px 0 rgba(147, 197, 253, 0.5)' }} // blue-300
-          />
+      {/* Background Decoration */}
+      <div className="absolute -left-32 top-20 h-72 w-72 rounded-full bg-sky-500/10 blur-3xl" />
+      <div className="absolute -right-32 bottom-10 h-72 w-72 rounded-full bg-indigo-500/10 blur-3xl" />
+
+      <div className="relative mx-auto max-w-6xl">
+        {/* Section Title */}
+        <div className="mb-14 text-center">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-[0.3em] text-sky-400">
+            Get To Know Me
+          </p>
+
+          <h2 className="text-3xl font-bold md:text-5xl">
+            About <span className="text-sky-400">Me</span>
+          </h2>
+        </div>
+
+        {/* Main Content */}
+        <div className="grid items-center gap-14 md:grid-cols-2">
+          {/* PHOTO */}
+          <div className="flex justify-center">
+            <div className="group relative">
+              {/* Glow */}
+              <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-sky-400 to-indigo-500 opacity-20 blur-2xl transition duration-500 group-hover:opacity-40" />
+
+              {/* Image */}
+              <div className="relative rounded-full bg-gradient-to-br from-sky-400 to-indigo-500 p-1">
+                <img
+                  src={myFoto}
+                  alt="Mayang Puspita Sari"
+                  className="h-64 w-64 rounded-full object-cover border-4 border-slate-950 transition duration-500 group-hover:scale-105 md:h-80 md:w-80"
+                />
+              </div>
+
+              {/* Floating Badge */}
+              <div className="absolute -bottom-4 -right-4 rounded-2xl border border-slate-700 bg-slate-900/90 px-5 py-3 shadow-xl backdrop-blur-md">
+                <p className="text-xs text-slate-400">Based in</p>
+                <p className="font-semibold text-sky-400">Indonesia 🇮🇩</p>
+              </div>
+            </div>
+          </div>
+
+          {/* DESCRIPTION */}
+          <div>
+            <p className="mb-2 text-sm font-medium text-sky-400">Hello, Im</p>
+
+            <h3 className="mb-4 text-3xl font-bold md:text-4xl">
+              Mayang Puspita Sari
+            </h3>
+
+            <p className="mb-6 text-lg font-medium text-slate-300">
+              Information Systems Graduate
+            </p>
+
+            <p className="mb-8 leading-8 text-slate-400">
+              Saya merupakan lulusan Sistem Informasi dengan minat pada
+              <span className="font-semibold text-white">
+                {" "}
+                Analisis Sistem
+              </span>{" "}
+              dan
+              <span className="font-semibold text-white">
+                {" "}
+                Manajemen Proyek IT
+              </span>
+              . Saya terbiasa memahami kebutuhan sistem, merancang alur proses,
+              membuat dokumentasi, serta berkolaborasi dalam pengembangan
+              aplikasi berbasis web.
+            </p>
+
+            {/* Skills */}
+            <div className="mb-8 grid grid-cols-2 gap-4">
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 transition hover:-translate-y-1 hover:border-sky-500/50">
+                <p className="mb-1 text-sm text-slate-400">Focus</p>
+                <p className="font-semibold">System Analysis</p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 transition hover:-translate-y-1 hover:border-indigo-500/50">
+                <p className="mb-1 text-sm text-slate-400">Interest</p>
+                <p className="font-semibold">IT Project Management</p>
+              </div>
+            </div>
+
+            {/* Tech Stack */}
+            <div className="mb-8">
+              <p className="mb-3 text-sm text-slate-400">Technical Skills</p>
+
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "React.js",
+                  "Node.js",
+                  "Express.js",
+                  "MySQL",
+                  "Tailwind CSS",
+                ].map((skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm text-slate-300 transition hover:border-sky-400 hover:text-sky-400"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Social Media */}
+            <div className="flex gap-3">
+              <a
+                href="https://www.linkedin.com/in/mayangpuspitasari02"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-700 bg-slate-900 transition duration-300 hover:-translate-y-1 hover:border-sky-400 hover:text-sky-400"
+              >
+                <FontAwesomeIcon icon={faLinkedin} size="lg" />
+              </a>
+
+              <a
+                href="https://github.com/mayangpuspitasariii"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-700 bg-slate-900 transition duration-300 hover:-translate-y-1 hover:border-white"
+              >
+                <FontAwesomeIcon icon={faGithub} size="lg" />
+              </a>
+
+              <a
+                href="https://instagram.com/mayangpuspita._s"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-700 bg-slate-900 transition duration-300 hover:-translate-y-1 hover:border-pink-400 hover:text-pink-400"
+              >
+                <FontAwesomeIcon icon={faInstagram} size="lg" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* Bagian Keterangan */}
-      <div className="keterangan text-white space-y-6 text-center md:text-left max-w-xl">
-        <h1 className="text-2xl md:text-4xl font-bold">
-          About Me <span>👩‍💻</span>
-        </h1>
-
-        <p className="text-sm md:text-lg leading-relaxed">
-          Halo! 👋😊 Saya
-          <span className="text-blue-300 font-bold"> Mayang Puspita Sari</span>,
-          seorang Lulusan Sistem Informasi dengan minat di bidang{' '}
-          <span className="font-semibold">Analisis Sistem</span> dan{' '}
-          <span className="font-semibold">Manajemen Proyek IT</span>. Terbiasa
-          menyusun kebutuhan sistem, merancang alur proses (DFD, ERD,
-          flowchart), serta mendokumentasikan hasil analisis untuk mendukung
-          pengembangan aplikasi. Saya juga berpengalaman memimpin tim dalam
-          proyek berbasis web, mulai dari tahap perencanaan, koordinasi, hingga
-          implementasi. Selain itu, memiliki kemampuan teknis dalam pengembangan
-          aplikasi menggunakan{' '}
-          <span className="font-semibold text-blue-300">
-            React.js, Node.js, Express.js, dan MySQL
-          </span>
-          , sehingga dapat mendukung proses analisis sekaligus berkolaborasi
-          dengan tim developer. Dengan bekal ini, saya tidak hanya mampu
-          menganalisis, tetapi juga mengembangkan aplikasi atau sistem sesuai
-          kebutuhan.
-        </p>
-
-        <p className="text-sm md:text-lg">
-          Jangan ragu untuk menjelajahi portofolio saya dan menghubungi saya di
-          LinkedIn, GitHub, atau Instagram! 😊
-        </p>
-
-        {/* Icon Sosial Media */}
-        <div className="flex justify-center md:justify-start gap-6">
-          <a
-            href="https://www.linkedin.com/in/mayangpuspitasari02"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-blue-500 transition-transform duration-500 hover:scale-110"
-          >
-            <FontAwesomeIcon icon={faLinkedin} size="2x" />
-          </a>
-          <a
-            href="https://github.com/mayangpuspitasariii"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-gray-300 transition-transform duration-500 hover:scale-110"
-          >
-            <FontAwesomeIcon icon={faGithub} size="2x" />
-          </a>
-          <a
-            href="https://instagram.com/mayangpuspita._s"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-orange-300 transition-transform duration-500 hover:scale-110"
-          >
-            <FontAwesomeIcon icon={faInstagram} size="2x" />
-          </a>
-        </div>
-      </div>
-    </div>
+    </section>
   );
 };
 
 export default About;
-
