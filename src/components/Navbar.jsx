@@ -15,19 +15,36 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 border-b border-white/5 bg-slate-950/80 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 sm:px-10 lg:px-12">
-        {/* Logo */}
+        {/* ================= LOGO ================= */}
         <a
           href="#home"
-          className="group text-2xl font-bold tracking-tight text-white"
+          className="group flex items-center gap-3"
           onClick={() => setIsMenuOpen(false)}
         >
-          Mayang
-          <span className="text-sky-400 transition-colors duration-300 group-hover:text-sky-300">
-            .
-          </span>
+          {/* MPS Logo */}
+          <div className="relative flex h-11 w-11 items-center justify-center">
+            <div className="absolute inset-0 rounded-xl bg-sky-400/10 blur-md transition-all duration-300 group-hover:bg-sky-400/20" />
+
+            <img
+              src="/mps-logo.png"
+              alt="MPS Logo"
+              className="relative h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+
+          {/* Name */}
+          <div className="flex items-baseline">
+            <span className="text-2xl font-bold tracking-tight text-white">
+              Mayang
+            </span>
+
+            <span className="text-2xl font-bold text-sky-400 transition-colors duration-300 group-hover:text-sky-300">
+              .
+            </span>
+          </div>
         </a>
 
-        {/* Desktop Menu */}
+        {/* ================= DESKTOP MENU ================= */}
         <div className="hidden items-center gap-8 md:flex">
           <ul className="flex items-center gap-7">
             {menuItems.map((item) => (
@@ -50,11 +67,11 @@ const Navbar = () => {
             href="#contact"
             className="rounded-full border border-sky-400/30 bg-sky-400/10 px-5 py-2.5 text-sm font-medium text-sky-300 transition-all duration-300 hover:border-sky-400/50 hover:bg-sky-400/20 hover:text-sky-200"
           >
-            Let&apos;s Talk
+            Let's Talk
           </a>
         </div>
 
-        {/* Mobile Button */}
+        {/* ================= MOBILE BUTTON ================= */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-slate-300 transition-all duration-300 hover:border-sky-400/30 hover:bg-sky-400/10 hover:text-white md:hidden"
@@ -68,7 +85,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* ================= MOBILE MENU ================= */}
       <div
         className={`overflow-hidden border-t border-white/5 bg-slate-950/95 backdrop-blur-xl transition-all duration-300 md:hidden ${
           isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
@@ -80,7 +97,7 @@ const Navbar = () => {
               <a
                 href={`#${item}`}
                 onClick={() => setIsMenuOpen(false)}
-                className="block border-b border-white/5 py-4 text-sm font-medium capitalize text-slate-400 transition-colors duration-300 hover:pl-2 hover:text-sky-400"
+                className="block border-b border-white/5 py-4 text-sm font-medium capitalize text-slate-400 transition-all duration-300 hover:pl-2 hover:text-sky-400"
               >
                 {item}
               </a>

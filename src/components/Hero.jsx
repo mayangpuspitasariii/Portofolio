@@ -64,7 +64,7 @@ const Hero = () => {
               {" "}
               Mayang{" "}
             </span>{" "}
-            <span className="text-white">.</span>{" "}
+            {/* <span className="text-white">.</span>{" "} */}
           </h1>{" "}
           {/* Role */}{" "}
           <div className="mt-5 flex flex-wrap items-center gap-2 text-xl font-semibold sm:text-2xl md:text-3xl">
