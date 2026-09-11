@@ -87,7 +87,7 @@ const Hero = () => {
             dan{" "}
             <span className="font-semibold text-slate-200">
               {" "}
-              Manajemen Proyek IT{" "}
+              Front-End Developer{" "}
             </span>
             . Memiliki pengalaman dalam perancangan sistem dan pengembangan
             aplikasi berbasis web menggunakan teknologi modern.{" "}
