@@ -85,12 +85,12 @@ const About = () => {
             {/* Skills */}
             <div className="mb-8 grid grid-cols-2 gap-4">
               <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 transition hover:-translate-y-1 hover:border-sky-500/50">
-                <p className="mb-1 text-sm text-slate-400">Focus</p>
+                <p className="mb-1 text-sm text-slate-400">Interest</p>
                 <p className="font-semibold">System Analysis</p>
               </div>
 
               <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 transition hover:-translate-y-1 hover:border-indigo-500/50">
-                <p className="mb-1 text-sm text-slate-400">Interest</p>
+                <p className="mb-1 text-sm text-slate-400">Focus</p>
                 <p className="font-semibold">Front-End Developer</p>
               </div>
             </div>
