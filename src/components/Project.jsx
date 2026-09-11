@@ -14,8 +14,8 @@ const projects = [
       "Website portofolio pribadi yang dibuat sebagai media untuk memperkenalkan diri, menampilkan keahlian, pengalaman, serta proyek yang telah saya kerjakan.",
     image: portfolioImg,
     link: "https://mayang-portofolio.vercel.app/",
-    status: "Website Dalam Proses Pengembangan",
-    demo: null,
+    status: "Selesai",
+    demo: "https://lnkd.in/p/gSuRm7Ht",
     technologies: ["React.js", "Tailwind CSS"],
   },
   {
@@ -40,7 +40,7 @@ const projects = [
       "Aplikasi toko online pakaian dengan fitur katalog produk, pemesanan, dan pembayaran manual melalui upload bukti pembayaran. Sistem memiliki role Admin dan User untuk mendukung pengelolaan produk dan proses transaksi.",
     image: tokoh,
     link: "https://tokoku-seven-zeta.vercel.app/",
-    status: "Dalam Proses Pengembangan",
+    status: "Website Dalam Proses Pengembangan",
     demo: null,
     technologies: ["React.js", "Tailwind CSS"],
   },
@@ -74,7 +74,7 @@ const projects = [
     image: palestina,
     link: "https://bersama-palestina.vercel.app/",
     status: "Selesai",
-    demo: null,
+    demo: "https://youtu.be/W4TujNAaRqE?si=LgsWTQx2LkiPWao_",
     technologies: [
       "React.js",
       "Tailwind CSS",

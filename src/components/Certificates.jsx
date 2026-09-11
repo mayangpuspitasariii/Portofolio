@@ -58,7 +58,7 @@ const certificates = [
 const Certificate = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [showAll, setShowAll] = useState(false);
-  const visibleCertificates = showAll ? certificates : certificates.slice(0, 6);
+  const visibleCertificates = showAll ? certificates : certificates.slice(0, 3);
   return (
     <section
       id="certificate"
