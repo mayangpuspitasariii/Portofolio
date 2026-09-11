@@ -63,7 +63,7 @@ const About = () => {
             </h3>
 
             <p className="mb-6 text-lg font-medium text-slate-300">
-              Information Systems Graduate
+              Information Systems
             </p>
 
             <p className="mb-8 leading-8 text-slate-400">
@@ -75,7 +75,7 @@ const About = () => {
               dan
               <span className="font-semibold text-white">
                 {" "}
-                Manajemen Proyek IT
+                Front-End Developer
               </span>
               . Saya terbiasa memahami kebutuhan sistem, merancang alur proses,
               membuat dokumentasi, serta berkolaborasi dalam pengembangan
@@ -91,7 +91,7 @@ const About = () => {
 
               <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 transition hover:-translate-y-1 hover:border-indigo-500/50">
                 <p className="mb-1 text-sm text-slate-400">Interest</p>
-                <p className="font-semibold">IT Project Management</p>
+                <p className="font-semibold">Front-End Developer</p>
               </div>
             </div>
 
